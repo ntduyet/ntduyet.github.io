@@ -1,0 +1,128 @@
+body {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+.grid-personal-details {
+  margin: 12px;
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  grid-template-rows: auto;
+  gap: 12px;
+}
+
+.grid-personal-middle {
+  vertical-align: top;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  row-gap: 8px;
+  padding-top: 24px;
+}
+
+.personal-middle-name {
+  font-size: 46px;
+  line-height: 48px;
+  vertical-align: top;
+}
+
+.personal-middle-title {
+  font-size: 24px;
+  line-height: 26px;
+  vertical-align: top;
+}
+
+.personal-metadata-container {
+  text-align: right;
+}
+
+.avatar {
+  border: 1px solid #425061;
+  border-radius: 50%;
+}
+
+.personal-metadata {
+  line-height: 22px;
+}
+
+.summary {
+  margin: 12px;
+}
+
+.section-container {
+  padding-top: 12px;
+}
+
+.section-header {
+  margin: 12px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #425061;
+}
+
+.skills-grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fit);
+  gap: 8px;
+  padding: 12px;
+}
+
+.skill-item {
+  background-color: #2b343d;
+  color: white;
+  border: 0.5px solid;
+  border-radius: 6px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 6px 12px;
+}
+
+.experience-container, .education-container {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.experience-header, .education-header {
+  display: grid;
+  row-gap: 8px;
+}
+
+.section-header-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.job-title, .education-degree {
+  font-size: 24px;
+  line-height: 26px;
+  font-weight: bold;
+}
+
+.company, .education-school {
+  font-size: 20px;
+  line-height: 22px;
+  font-style: italic;
+}
+
+.job-tasks {
+  display: grid;
+  row-gap: 4px;
+  padding-left: 12px;
+}
+
+.footer-duration, .footer-location {
+  font-size: 16px;
+  line-height: 18px;
+  font-style: italic;
+  color: #2b343d;
+}
+
+.footer-duration {
+  text-align: left;
+}
+
+.footer-location {
+  text-align: right;
+}
