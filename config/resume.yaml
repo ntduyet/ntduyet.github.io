@@ -4,9 +4,10 @@ person:
 metadatas:
   - id: email
     value: duyetnt.se.uit@gmail.com
-    link: mailto://duyetnt.se.uit@gmail.com
+    link: mailto:duyetnt.se.uit@gmail.com
   - id: phone
     value: '+84773350530'
+    link: tel:+84773350530
   - id: location
     value: Singapore
   - id: linkedin
