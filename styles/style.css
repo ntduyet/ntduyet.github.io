@@ -113,6 +113,8 @@ body {
   font-size: 20px;
   line-height: 22px;
   font-style: italic;
+  display: flex;
+  place-items: center;
 }
 
 .job-tasks {
