@@ -13,7 +13,7 @@ metadatas:
   - id: linkedin
     value: linkedin.com/in/duyetnt
     link: https://linkedin.com/in/duyetnt
-summary: I'm a passionate Software Engineer who loves mobile app development. Always aim to deliver the best experience through high-quality products to satisfy millions of users.100% willing to dedicate the highest performance, to learn and share new things and to be a supportive member to boost the team moving forward.
+summary: Passionate iOS engineer focused on creating high-quality, scalable mobile products with great user experiences. Dedicated to learning, mentoring, and driving teams toward technical excellence.
 education:
   degree: Bachelor of Software Engineering
   school: University of Information Technology - VNU HCM
@@ -55,7 +55,7 @@ experiences:
     duration: 12/2022 - 05/2024
     location: Singapore
     tasks:
-      - Implemented 6 features on time or ahead of time with good engineering practices (reusability/maintainability/unit/snapshot tests/Swift adoption, etc).
+      - Implemented 6 features on time or ahead of time with good engineering practices (reusability, maintainability, unit/snapshot tests, Swift adoption, etc).
       - Took initiative to work on engineering improvement/refactoring projects, reducing code complexity/duplication and improving feature delivery eﬃciency significantly.
       - Owner of some important modules providing technical consultation/mentorship to help others design better code via tech solution/code review.
   - company:

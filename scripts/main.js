@@ -70,13 +70,14 @@ function createMetadataItems(metadatas) {
     }
 }
 
-function updateSummary(summary) {
-    const element = document.querySelector('.summary');
-    element.textContent = summary;
+function createSummary(summary) {
+    const container = document.querySelector('.summary-container');
+    const element = createElement('div', 'summary-content', null, summary);
+    container.appendChild(element);
 }
 
 function createSkillItems(skills) {
-    const container = document.querySelector('.skills-grid-container');
+    const container = document.querySelector('.skills-container');
     for (const skill of skills) {
         const skillItem = createElement('div', 'skill-item', null, skill);
         container.appendChild(skillItem);
@@ -92,9 +93,10 @@ function createExpereienceItems(experiences) {
         const header = createElement('div', 'experience-header', null, null);
         item.appendChild(header);
 
-        const jobTitle = createElement('div', 'job-title', null, experience.position);
-        const company = createElement('div', 'company', null, experience.company.name);
+        const jobTitle = createElement('h3', 'job-title', null, experience.position);
         header.appendChild(jobTitle);
+
+        const company = createElement('h4', 'company', null, experience.company.name);
         header.appendChild(company);
 
         const hyperlink = createElement('span', 'fa-solid fa-arrow-up-right-from-square', null, null);
@@ -110,7 +112,7 @@ function createExpereienceItems(experiences) {
         footer.appendChild(duration);
         footer.appendChild(location);
 
-        const tasksList = createElement('ul', 'job-tasks', null, null);
+        const tasksList = createElement('div', 'job-tasks', null, null);
         item.appendChild(tasksList);
 
         for (const task of experience.tasks) {
@@ -148,7 +150,7 @@ async function generateResume() {
 
     createNameAndtitle(resumeData.person);
     createMetadataItems(resumeData.metadatas);
-    updateSummary(resumeData.summary);
+    createSummary(resumeData.summary);
     createSkillItems(resumeData.skills);
     createExpereienceItems(resumeData.experiences);
     createEducation(resumeData.education);
