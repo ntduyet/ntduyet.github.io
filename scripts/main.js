@@ -9,7 +9,10 @@ async function loadYAML(url) {
 
 function createElement(tag, className, id, text) {
     const element = document.createElement(tag);
-    element.setAttribute('class', className);
+
+    if (className) {
+        element.setAttribute('class', className);
+    }
     
     if (id) {
         element.setAttribute('id', id);
@@ -23,19 +26,46 @@ function createElement(tag, className, id, text) {
 }
 
 function createNameAndtitle(person) {
-    const parentDiv = document.querySelector('.grid-personal-middle');
+    const parentDiv = document.querySelector('.personal-details-container');
     
-    const nameElement = createElement('div', 'personal-middle-name', null,  person.name);
+    const nameElement = createElement('div', 'personal-details-name', null,  person.name);
     parentDiv.appendChild(nameElement);
 
-    const titleElement = createElement('div', 'personal-middle-title', null, person.title);
+    const titleElement = createElement('div', 'personal-details-title', null, person.title);
     parentDiv.appendChild(titleElement);
+}
+
+function iconForMetadata(id) {
+    switch (id) {
+        case 'email':
+            return 'fa-solid fa-envelope';
+        case 'phone':
+            return 'fa-solid fa-phone';
+        case 'linkedin':
+            return 'fa-brands fa-linkedin';
+        case 'location':
+            return 'fa-solid fa-location-dot';
+        default: 
+            return null;
+    }
 }
 
 function createMetadataItems(metadatas) {
     const container = document.querySelector('.personal-metadata-container');
     for (const metadata of metadatas) {
         const pItem = createElement('p', 'personal-metadata', metadata.id, metadata.value);
+        if (metadata.link) {
+            pItem.style.cursor = 'pointer';
+            pItem.setAttribute('onclick', `window.open('${metadata.link}', '_blank')`);
+        }
+
+        const iconClass = iconForMetadata(metadata.id);
+        if (iconClass) {
+            const iconElement = createElement('span', iconClass, null, null);
+            iconElement.setAttribute('style', 'padding-left: 12px;');
+            pItem.appendChild(iconElement);
+        }
+
         container.appendChild(pItem);
     }
 }
