@@ -93,9 +93,14 @@ function createExpereienceItems(experiences) {
         item.appendChild(header);
 
         const jobTitle = createElement('div', 'job-title', null, experience.position);
-        const company = createElement('div', 'company', null, experience.company);
+        const company = createElement('div', 'company', null, experience.company.name);
         header.appendChild(jobTitle);
         header.appendChild(company);
+
+        const hyperlink = createElement('span', 'fa-solid fa-arrow-up-right-from-square', null, null);
+        hyperlink.setAttribute('style', 'padding-left: 8px; cursor: pointer; font-size: 0.7em; color: var(--hyperlink-color);');
+        hyperlink.setAttribute('onclick', `window.open('${experience.company.website}', '_blank')`);
+        company.appendChild(hyperlink);
 
         const footer = createElement('div', 'section-header-footer', null, null);
         header.appendChild(footer);
