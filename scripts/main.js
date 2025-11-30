@@ -110,7 +110,6 @@ function createEducation(education) {
 
 async function generateResume() {
     const resumeData = await loadYAML('/config/resume.yaml');
-    console.log(resumeData);
 
     createNameAndtitle(resumeData.person);
     createMetadataItems(resumeData.metadatas);
