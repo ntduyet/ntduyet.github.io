@@ -36,7 +36,9 @@ skills:
   - Mentoring
   - High sense of responsibility
 experiences:
-  - company: OKX
+  - company: 
+      name: OKX
+      website: https://www.linkedin.com/company/okxofficial/about/
     position: Senior Software Engineer, iOS
     location: Singapore
     duration: 05/2024 - Present
@@ -46,7 +48,9 @@ experiences:
       - Elevated team-wide engineering standards by introducing new architectural paradigms, significantly enhancing overall system stability, reducing critical crashes, and boosting unit test coverage.
       - Drove substantial gains in development eﬃciency by integrating AI-assisted coding, allowing the team to shift focus to critical problem-solving and innovation over repetitive tasks.
       - Mentored and guided junior engineers through complex refactoring projects, consistent code reviews, and technical consultations, ensuring successful high-quality project delivery and adherence to best practices.
-  - company: TikTok
+  - company:
+      name: TikTok
+      website: https://www.linkedin.com/company/tiktok/about
     position: Software Engineer, Messaging iOS
     duration: 12/2022 - 05/2024
     location: Singapore
@@ -54,7 +58,9 @@ experiences:
       - Implemented 6 features on time or ahead of time with good engineering practices (reusability/maintainability/unit/snapshot tests/Swift adoption, etc).
       - Took initiative to work on engineering improvement/refactoring projects, reducing code complexity/duplication and improving feature delivery eﬃciency significantly.
       - Owner of some important modules providing technical consultation/mentorship to help others design better code via tech solution/code review.
-  - company: Bloomberg LP
+  - company:
+      name: Bloomberg LP
+      website: https://www.linkedin.com/company/bloomberg/about
     position: Senior Software Engineer, iOS
     duration: 02/2022 - 11/2022
     location: London, United Kingdom
@@ -62,7 +68,9 @@ experiences:
       - Refactored oﬄine login flow and rolled out to 100% of users successfully.
       - Proposed and led the parallel UI testing initiative which cut the CI pipelines time by 30-40%.
       - Led Xcode14/iOS 16 preparation work to ensure the project compatibility and successful release upon iOS 16 oﬃcial rollout.
-  - company: Delivery Hero SE
+  - company:
+      name: Delivery Hero SE
+      website: https://www.linkedin.com/company/delivery-hero-se/about
     position: Software Engineer, iOS
     duration: 03/2021 - 01/2022
     location: Berlin, Germany
@@ -71,7 +79,9 @@ experiences:
       - Built the team's codebase from scratch with a standardised architecture (VIPER) which resulted in high maintainability and testability with ~98% unit test coverage.
       - Achieved 93% UI test coverage (the rest is untestable).
       - Was the first team implementing snapshot testing for every UI component.
-  - company: Grab
+  - company:
+      name: Grab
+      website: https://www.linkedin.com/company/grabapp/about
     position: Senior Software Engineer, iOS
     duration: 09/2018 - 11/2020
     location: Singapore
@@ -81,7 +91,9 @@ experiences:
       - Led the unit test modularisation project, which improved build time and dependency graph significantly.
       - Increased end to end test coverage from 0% to ~31% in 3 months.
       - Improved CI stability by investigating and fixing a lot of unstable/flaky tests which required good debugging skill and being patient.
-  - company: Misfit Wearables & Fossil Group, Inc
+  - company: 
+      name: Misfit Wearables & Fossil Group, Inc
+      website: https://www.linkedin.com/company/fossil/about
     position: Software Engineer, iOS
     duration: 09/2015 - 08/2018
     location: Ho Chi Minh City, Vietnam
