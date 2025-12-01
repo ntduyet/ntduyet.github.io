@@ -86,6 +86,11 @@ h4 {
   line-height: 22px;
 }
 
+.metadata-icon-left {
+  opacity: 0;
+  transition: ease-out 0.2s;
+}
+
 .summary-container {
   display: flex;
   align-content: baseline;
@@ -193,5 +198,17 @@ h4 {
   .personal-avatar {
     width: 144px;
     height: 144px;
+  }
+
+  .personal-metadata-container {
+    text-align: left;
+  }
+
+  .metadata-icon-right {
+    opacity: 0;
+  }
+
+  .metadata-icon-left {
+    opacity: 1;
   }
 }

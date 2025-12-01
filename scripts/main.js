@@ -61,9 +61,13 @@ function createMetadataItems(metadatas) {
 
         const iconClass = iconForMetadata(metadata.id);
         if (iconClass) {
-            const iconElement = createElement('span', iconClass, null, null);
-            iconElement.setAttribute('style', 'padding-left: 12px;');
-            pItem.appendChild(iconElement);
+            const rightIcon = createElement('span', `${iconClass} metadata-icon-right`, null, null);
+            rightIcon.setAttribute('style', 'padding-left: 12px;');
+            pItem.appendChild(rightIcon);
+
+            const leftIcon = createElement('span', `${iconClass} metadata-icon-left`, null, null);
+            leftIcon.setAttribute('style', 'padding-right: 12px;');
+            pItem.prepend(leftIcon);
         }
 
         container.appendChild(pItem);
