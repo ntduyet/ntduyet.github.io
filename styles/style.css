@@ -47,6 +47,7 @@ h4 {
 .personal-container {
   margin: 12px;
   display: flex;
+  flex-wrap: wrap;
   grid-template-columns: auto 1fr auto;
   gap: 12px;
 }
@@ -71,16 +72,23 @@ h4 {
 }
 
 .personal-metadata-container {
+  flex: 1 1 auto;
   text-align: right;
 }
 
 .personal-avatar {
   border: 1px solid #425061;
   border-radius: 50%;
+  transition: ease-out 0.3s;
 }
 
 .personal-metadata {
   line-height: 22px;
+}
+
+.metadata-icon-left {
+  opacity: 0;
+  transition: ease-out 0.2s;
 }
 
 .summary-container {
@@ -184,4 +192,23 @@ h4 {
 
 .footer-location {
   text-align: right;
+}
+
+@media only screen and (max-width: 840.5px) {
+  .personal-avatar {
+    width: 144px;
+    height: 144px;
+  }
+
+  .personal-metadata-container {
+    text-align: left;
+  }
+
+  .metadata-icon-right {
+    opacity: 0;
+  }
+
+  .metadata-icon-left {
+    opacity: 1;
+  }
 }

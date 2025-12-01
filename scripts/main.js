@@ -28,10 +28,10 @@ function createElement(tag, className, id, text) {
 function createNameAndtitle(person) {
     const parentDiv = document.querySelector('.personal-details-container');
     
-    const nameElement = createElement('div', 'personal-details-name', null,  person.name);
+    const nameElement = createElement('h1', 'personal-details-name', null,  person.name);
     parentDiv.appendChild(nameElement);
 
-    const titleElement = createElement('div', 'personal-details-title', null, person.title);
+    const titleElement = createElement('h3', 'personal-details-title', null, person.title);
     parentDiv.appendChild(titleElement);
 }
 
@@ -61,9 +61,13 @@ function createMetadataItems(metadatas) {
 
         const iconClass = iconForMetadata(metadata.id);
         if (iconClass) {
-            const iconElement = createElement('span', iconClass, null, null);
-            iconElement.setAttribute('style', 'padding-left: 12px;');
-            pItem.appendChild(iconElement);
+            const rightIcon = createElement('span', `${iconClass} metadata-icon-right`, null, null);
+            rightIcon.setAttribute('style', 'padding-left: 12px;');
+            pItem.appendChild(rightIcon);
+
+            const leftIcon = createElement('span', `${iconClass} metadata-icon-left`, null, null);
+            leftIcon.setAttribute('style', 'padding-right: 12px;');
+            pItem.prepend(leftIcon);
         }
 
         container.appendChild(pItem);
