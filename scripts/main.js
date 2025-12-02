@@ -104,7 +104,6 @@ function createExpereienceItems(experiences) {
         header.appendChild(company);
 
         const hyperlink = createElement('span', 'fa-solid fa-arrow-up-right-from-square', null, null);
-        hyperlink.setAttribute('style', 'padding-left: 8px; cursor: pointer; font-size: 0.7em; color: var(--hyperlink-color);');
         hyperlink.setAttribute('onclick', `window.open('${experience.company.website}', '_blank')`);
         company.appendChild(hyperlink);
 
