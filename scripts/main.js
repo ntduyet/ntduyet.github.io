@@ -7,6 +7,14 @@ async function loadYAML(url) {
   return data;
 }
 
+function addOpenLinkClickEvent(element, url) {
+    element.style.cursor = 'pointer';
+    element.onclick = () => {
+        const target = (new String(url)).startsWith('http') ? '_blank' : '_self';
+        window.open(url, target);
+    };
+}
+
 function createElement(tag, className, id, text) {
     const element = document.createElement(tag);
 
@@ -55,8 +63,7 @@ function createMetadataItems(metadatas) {
     for (const metadata of metadatas) {
         const pItem = createElement('p', 'personal-metadata', metadata.id, metadata.value);
         if (metadata.link) {
-            pItem.style.cursor = 'pointer';
-            pItem.setAttribute('onclick', `window.open('${metadata.link}', '_blank')`);
+            addOpenLinkClickEvent(pItem, metadata.link);
         }
 
         const iconClass = iconForMetadata(metadata.id);
@@ -104,7 +111,7 @@ function createExpereienceItems(experiences) {
         header.appendChild(company);
 
         const hyperlink = createElement('span', 'fa-solid fa-arrow-up-right-from-square', null, null);
-        hyperlink.setAttribute('onclick', `window.open('${experience.company.website}', '_blank')`);
+        addOpenLinkClickEvent(hyperlink, experience.company.website);
         company.appendChild(hyperlink);
 
         const footer = createElement('div', 'section-header-footer', null, null);
