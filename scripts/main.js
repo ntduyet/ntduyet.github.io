@@ -111,7 +111,7 @@ function createExpereienceItems(experiences) {
         header.appendChild(company);
 
         const hyperlink = createElement('span', 'fa-solid fa-arrow-up-right-from-square', null, null);
-        addOpenLinkClickEvent(hyperlink, experience.company.link);
+        addOpenLinkClickEvent(hyperlink, experience.company.website);
         company.appendChild(hyperlink);
 
         const footer = createElement('div', 'section-header-footer', null, null);
