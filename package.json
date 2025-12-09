@@ -5,11 +5,14 @@
     "start": "npx serve@latest ./build",
     "test": "vitest"
   },
+  "dependencies": {
+    "js-yaml": "^4.1.0",
+    "@types/js-yaml": "4.0.9"
+  },
   "devDependencies": {
     "@types/node": "24.10.1",
     "@types/react": "19.2.7",
     "typescript": "5.9.3",
-    "@types/js-yaml": "4.0.9",
     "vitest": "4.0.15"
   }
 }
