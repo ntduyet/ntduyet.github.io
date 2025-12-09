@@ -2,12 +2,6 @@ import { expect, test, vi } from 'vitest'
 import * as stub from '../services/yaml-loader'
 import { Resume, ResumeLoaderService } from '../services/resume-loader'
 
-interface MockYamlContent {
-  key: string
-  value: string
-  extra: string
-}
-
 test('load resume should succeed when type matches', async () => {  
   const yaml = {
     person: { name: 'name', title: 'title' },

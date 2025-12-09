@@ -40,7 +40,7 @@ export interface Resume {
   experiences: WorkExperience[]
 }
 
-function isResume(obj: any): obj is Resume {
+function isResume(obj: unknown): obj is Resume {
   return (
       typeof obj === 'object' 
       && obj !== null 
