@@ -1,1 +1,9 @@
+.DS_Store
+
+# VS code
 .vscode
+
+# React
+next-env.d.ts
+.next/dev
+node_modules
