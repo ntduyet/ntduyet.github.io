@@ -5,5 +5,5 @@
 
 # React
 next-env.d.ts
-.next/dev
+.next
 node_modules

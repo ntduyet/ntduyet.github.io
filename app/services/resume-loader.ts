@@ -41,16 +41,19 @@ export interface Resume {
 }
 
 function isResume(obj: unknown): obj is Resume {
-  return (
-      typeof obj === 'object' 
-      && obj !== null 
-      && typeof obj.person === 'object'
-      && typeof obj.summary === 'string'
-      && typeof obj.metadatas === 'object'
-      && typeof obj.education === 'object'
-      && typeof obj.skills === 'object'
-      && typeof obj.experiences === 'object'
-    )
+  if (typeof obj !== 'object') return false;
+
+  const expectedProperties = new Set(['person', 'summary', 'metadatas', 'education', 'skills', 'experiences']);
+  const properties = Object.getOwnPropertyNames(obj);
+  for (const p of properties) {
+    if (expectedProperties.has(p)) {
+      expectedProperties.delete(p);
+    } else {
+      return false;
+    }
+  }
+
+  return expectedProperties.size === 0;
 }
 
 export interface IResumeLoaderService {

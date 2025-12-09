@@ -21,7 +21,7 @@ jobs:
           node-version: 24
           cache: npm
       - name: Install dependencies
-        run: npm install --verbose
+        run: npm ci
       - name: Run eslint on changed files
         uses: tj-actions/eslint-changed-files@v25
         with:

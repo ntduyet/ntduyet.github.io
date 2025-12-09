@@ -1,11 +1,11 @@
 export default function DurationLocation({ contents }: { contents: [string, string] }) {
-  const leadingStyle = {
+  const leadingStyle: React.CSSProperties = {
     textAlign: 'left'
   }
-  const trailingStyle = {
+  const trailingStyle: React.CSSProperties = {
     textAlign: 'right'
   }
-  const style = {
+  const style: React.CSSProperties = {
     display: 'grid',
     gridTemplateColumns: '1fr 1fr',
     gap: '12px'

@@ -1,7 +1,7 @@
 import SkillItem from "./skill-item";
 
 export default function SkillList({ items } : { items: string[] }) {
-  const style = {
+  const style: React.CSSProperties = {
     display: 'flex', 
     flexWrap: 'wrap',
     gap: '8px'

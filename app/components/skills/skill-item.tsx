@@ -1,5 +1,5 @@
 export default function SkillItem({ content } : { content: string }) {
-  const style = {
+  const style: React.CSSProperties = {
     backgroundColor: "#2b343d",
     color: "white",
     borderRadius: "6px",
