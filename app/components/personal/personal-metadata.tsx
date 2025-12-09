@@ -1,13 +1,12 @@
 'use client';
 
-import { CSSProperties } from 'react';
 import { Metadata } from '../../services/resume-loader'
 import FontAwesomeIcon from '../font-awesome-icon';
 
 export default function PersonalMetadata({ metadata, align } : { metadata: Metadata, align: 'left' | 'right' }) {
   function iconSpan(): React.ReactNode {
-    const style: CSSProperties = align === 'left' ? { paddingRight: '12px'} : { paddingLeft: '12px' }
-    return <FontAwesomeIcon type={metadata.id} style={style } />
+    const className = align === 'left' ? 'pr-[12px]' : 'pl-[12px]';
+    return <FontAwesomeIcon type={metadata.id} className={className} />
   };
 
   function handleOnClick() {
@@ -17,8 +16,11 @@ export default function PersonalMetadata({ metadata, align } : { metadata: Metad
     window.open(metadata.link, target);
   }
 
+  let className = "mt-2.5 mb-2.5";
+  if (metadata.link !== undefined)
+    className += ' cursor-pointer';
   return (
-    <p style={metadata.link !== undefined ? {cursor: 'pointer'} : {}} onClick={handleOnClick}>
+    <p className={className} onClick={handleOnClick}>
       {align === 'left' && iconSpan() }
       {metadata.value}
       {align === 'right' && iconSpan() }

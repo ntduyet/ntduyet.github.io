@@ -1,12 +1,8 @@
 export default function SkillItem({ content } : { content: string }) {
-  const style: React.CSSProperties = {
-    backgroundColor: "#2b343d",
-    color: "white",
-    borderRadius: "6px",
-    textAlign: "center",
-    padding: "6px 12px",
-  };
   return (
-    <div className="skill-item" style={style}>{content}</div>
+    <div 
+    className="skill-item  bg-slate-800 text-center text-white rounded-[24px] pt-[6px] pb-[6px] pl-[12px] pr-[12px]">
+      {content}
+    </div>
   );
 }

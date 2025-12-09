@@ -13,17 +13,6 @@ export default async function Container({
 }: {
   resumeLoaderService: IResumeLoaderService;
 }) {
-  const outerStyle: React.CSSProperties = {
-    maxWidth: "1048px",
-    margin: "auto",
-    position: "relative",
-  };
-  const style: React.CSSProperties = {
-    margin: "0 auto",
-    paddingTop: "24px",
-    paddingBottom: "144px",
-  };
-
   function resumeComponents(resume: Resume): React.ReactNode {
     return (
       <>
@@ -51,8 +40,8 @@ export default async function Container({
 
   function Component({ children }: { children: React.ReactNode }) {
     return (
-      <div style={outerStyle}>
-        <div className="root" style={style}>
+      <div className="max-w-5xl m-auto">
+        <div className="root w-full mt-0 mb-0 ml-[12px] mr-[12px] pt-[24px] pb-[144px] grid gap-[24px]">
           {children}
         </div>
       </div>
