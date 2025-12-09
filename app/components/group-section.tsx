@@ -1,11 +1,7 @@
 export default function GroupSection({ title, children } : { title: string, children: React.ReactNode | React.ReactNode[] }) {
-  const headerStyle: React.CSSProperties = {
-    paddingBottom: '12px',
-    borderBottom: '1px solid #5e5e5e'
-  }
   return (
-    <div className="group-section">
-      <h2 style={headerStyle}>{title.toUpperCase()}</h2>
+    <div className="group-section grid gap-[12px]">
+      <h2 className="pb-[12px] border-b border-b-[#5e5e5e]">{title.toUpperCase()}</h2>
       {children}
     </div>
   )
