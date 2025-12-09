@@ -3,6 +3,14 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: read
+  pull-requests: write
+
+env:
+  REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  REVIEWDOG_REPORTER: github-pr-check
+
 jobs:
   lint_changeset:
     runs-on: ubuntu-latest
@@ -18,3 +26,5 @@ jobs:
         uses: tj-actions/eslint-changed-files@v25
         with:
           config_path: ./eslint.config.mjs
+          extra_args: "--no-warn-ignored"
+
