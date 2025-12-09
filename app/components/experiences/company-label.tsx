@@ -4,7 +4,7 @@ import { Company } from "../../services/resume-loader"
 import FontAwesomeIcon from "../font-awesome-icon";
 
 export default function CompanyLabel({ item }: { item: Company }) {
-  const style = {
+  const style: React.CSSProperties = {
     color: '#dc0000',
     paddingLeft: '8px',
     cursor: 'pointer',

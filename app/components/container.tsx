@@ -13,12 +13,12 @@ export default async function Container({
 }: {
   resumeLoaderService: IResumeLoaderService;
 }) {
-  const outerStyle = {
+  const outerStyle: React.CSSProperties = {
     maxWidth: "1048px",
     margin: "auto",
     position: "relative",
   };
-  const style = {
+  const style: React.CSSProperties = {
     margin: "0 auto",
     paddingTop: "24px",
     paddingBottom: "144px",

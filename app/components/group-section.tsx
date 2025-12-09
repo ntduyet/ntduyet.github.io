@@ -1,5 +1,5 @@
 export default function GroupSection({ title, children } : { title: string, children: React.ReactNode | React.ReactNode[] }) {
-  const headerStyle = {
+  const headerStyle: React.CSSProperties = {
     paddingBottom: '12px',
     borderBottom: '1px solid #5e5e5e'
   }

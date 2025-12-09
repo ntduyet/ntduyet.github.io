@@ -4,7 +4,7 @@ import { Metadata } from "../../services/resume-loader";
 import PersonalMetadata from "./personal-metadata";
 
 export default function PersonalMetadataList({ metadatas, align } : { metadatas: Metadata[], align: 'left' | 'right'}) {
-  const style = {
+  const style: React.CSSProperties = {
     textAlign: align
   }
 
