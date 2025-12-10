@@ -14,7 +14,7 @@ export default function CompanyLabel({ item }: { item: Company }) {
       <a className="inline-grid" href={item.website}>
         <FontAwesomeIcon
           type="link"
-          className="text-[0.6em] text-red-600 hover:opacity-60 cursor-pointer pl-[6px]"
+          className="text-[0.6em] text-red-600 cursor-pointer pl-[6px] transition duration-300 ease-in-out hover:scale-110 hover:opacity-60"
           onClick={handleOnClick}
         />
       </a>
