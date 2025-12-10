@@ -16,9 +16,9 @@ export default function PersonalMetadata({ metadata, align } : { metadata: Metad
     window.open(metadata.link, target);
   }
 
-  let className = "mt-2.5 mb-2.5 items-center";
+  let className = "mt-2 mb-2 items-center";
   if (metadata.link !== undefined)
-    className += ' cursor-pointer';
+    className += ' cursor-pointer transition duration-300 ease-in-out hover:scale-105';
   return (
     <p className={className} onClick={handleOnClick}>
       {align === 'left' && iconSpan() }
