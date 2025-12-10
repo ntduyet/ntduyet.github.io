@@ -1,11 +1,11 @@
 'use client';
 
 import { Metadata } from '../../services/resume-loader'
-import FontAwesomeIcon from '../font-awesome-icon';
+import FontAwesomeIcon from '@/app/ui/font-awesome-icon';
 
 export default function PersonalMetadata({ metadata, align } : { metadata: Metadata, align: 'left' | 'right' }) {
   function iconSpan(): React.ReactNode {
-    const className = align === 'left' ? 'pr-[12px]' : 'pl-[12px]';
+    const className = align === 'left' ? 'mr-[12px]' : 'ml-[12px]';
     return <FontAwesomeIcon type={metadata.id} className={className} />
   };
 
