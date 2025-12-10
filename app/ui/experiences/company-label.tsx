@@ -11,11 +11,13 @@ export default function CompanyLabel({ item }: { item: Company }) {
   return (
     <h4 className="flex items-center">
       {item.name}
-      <FontAwesomeIcon
-        type="link"
-        className="text-[0.7em] text-red-600 hover:opacity-60 cursor-pointer pl-[6px]"
-        onClick={handleOnClick}
-      />
+      <a className="inline-grid" href={item.website}>
+        <FontAwesomeIcon
+          type="link"
+          className="text-[0.6em] text-red-600 hover:opacity-60 cursor-pointer pl-[6px]"
+          onClick={handleOnClick}
+        />
+      </a>
     </h4>
   );
 }
