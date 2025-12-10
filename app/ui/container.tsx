@@ -41,7 +41,7 @@ export default async function Container({
   function Component({ children }: { children: React.ReactNode }) {
     return (
       <div className="max-w-5xl m-auto">
-        <div className="root w-full mt-0 mb-0 ml-[12px] mr-[12px] pt-[24px] pb-[144px] grid gap-[24px]">
+        <div className="root mt-0 mb-0 ml-[12px] mr-[12px] pt-[24px] pb-[144px] grid gap-[24px]">
           {children}
         </div>
       </div>
