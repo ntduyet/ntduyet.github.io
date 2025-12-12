@@ -1,6 +1,6 @@
 import { expect, test, vi } from 'vitest'
-import * as stub from '../services/yaml-loader'
-import { Resume, ResumeLoaderService } from '../services/resume-loader'
+import * as stub from "@/app/services/yaml-loader"
+import { Resume, ResumeLoaderService } from '@/app/services/resume-loader'
 
 test('load resume should succeed when type matches', async () => {  
   const yaml = {
