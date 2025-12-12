@@ -48,7 +48,16 @@ test('load resume should fail when type mismatches', async () => {
   
   const sut = new ResumeLoaderService('file');
 
-  let res: Resume | null = null
+  let res: Resume | null = null;
+  try {
+    res = await sut.loadResume();
+  } catch {}
+
+  expect(res).toBeNullable();
+
+  spy.mockResolvedValue(1);
+  res = null;
+
   try {
     res = await sut.loadResume();
   } catch {}
