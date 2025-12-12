@@ -57,9 +57,8 @@ jobs:
           name: coverage-main
           path: coverage-main
           github_token: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Report Coverage Trend
         uses: davelosert/vitest-coverage-report-action@v2
         with:
           json-summary-compare-path: coverage-main/coverage-summary.json
-          threshold-icons: "{0: '🔴', 80: '🟠', 90: '🟢'}"
+          threshold-icons: '{"0":"🔴","80":"🟠","90":"🟢"}'
