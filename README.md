@@ -4,6 +4,8 @@
 [![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+![Vitest](https://img.shields.io/badge/Tested_with-Vitest-6E9F18?style=flat&logo=vitest&logoColor=white)
+[![Coverage Status](https://coveralls.io/repos/github/ntduyet/ntduyet.github.io/badge.svg?branch=main)](https://coveralls.io/github/ntduyet/ntduyet.github.io?branch=main)
 
 > 🚀 A personal learning project to explore web development by building a **templated resume generator** with **React**, **Next.js**, and **Tailwind CSS**.
 
@@ -23,6 +25,7 @@ It blends **front-end design**, **data-driven components**, and **Next.js featur
 ✅ Customizable YAML-based resume configuration  
 ✅ Reusable and modular components  
 ✅ Responsive UI with Tailwind CSS  
+✅ Lightweight unit tests powered by Vitest  
 ✅ Deployable on GitHub Pages  
 ✅ Beginner-friendly development setup  
 
@@ -63,7 +66,8 @@ Through building this project, I’ve gained hands-on experience with:
 
 - ⚡ **Next.js** — understanding routing, page generation, and component-based architecture  
 - 🎨 **Tailwind CSS** — rapid UI development using utility-first principles  
-- 🧩 **React + TypeScript** — structuring clean, type-safe, and scalable frontend apps  
+- 🧩 **React + TypeScript** — structuring clean, type-safe, and scalable frontend apps
+- 🧪 **Vitest** — writing and running lightweight, fast unit tests for React components  
 - 🔄 **GitHub Actions** — setting up automated build and deployment pipelines  
 - 🧠 **UI Design Principles** — creating visually consistent, data-driven interfaces  
 
