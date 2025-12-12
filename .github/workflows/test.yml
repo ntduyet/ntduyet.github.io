@@ -30,11 +30,6 @@ jobs:
         with:
           name: coverage-pr
           path: coverage
-      - name: Report Coverage Summary 
-        if: always() 
-        uses:  davelosert/vitest-coverage-report-action@v2
-        with:
-          threshold-icons: "{0: '🔴', 80: '🟠', 90: '🟢'}"
 
   coverage-trend:
     needs: test
@@ -67,3 +62,4 @@ jobs:
         uses: davelosert/vitest-coverage-report-action@v2
         with:
           json-summary-compare-path: coverage-main/coverage-summary.json
+          threshold-icons: "{0: '🔴', 80: '🟠', 90: '🟢'}"
