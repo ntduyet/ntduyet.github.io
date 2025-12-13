@@ -24,22 +24,22 @@ test('load resume should succeed when type matches', async () => {
 
   const sut = new ResumeLoaderService('file');
 
-  let res: Resume | null = null
-  try {
-    res = await sut.loadResume();
-  } catch {}
+  const promise = sut.loadResume();
+  await expect(promise).resolves.toBeDefined();
+  
+  const res: Resume = await promise;
 
   expect(res).toBeDefined();
-  expect(res?.person.name).toStrictEqual('name');
-  expect(res?.person.title).toStrictEqual('title');
-  expect(res?.summary).toBeDefined();
-  expect(res?.metadatas).toBeDefined();
-  expect(res?.metadatas.length).toEqual(1);
-  expect(res?.education).toBeDefined();
-  expect(res?.skills).toBeDefined();
-  expect(res?.skills.length).toEqual(2);
-  expect(res?.experiences).toBeDefined();
-  expect(res?.experiences.length).toEqual(1);
+  expect(res.person.name).toStrictEqual('name');
+  expect(res.person.title).toStrictEqual('title');
+  expect(res.summary).toBeDefined();
+  expect(res.metadatas).toBeDefined();
+  expect(res.metadatas.length).toEqual(1);
+  expect(res.education).toBeDefined();
+  expect(res.skills).toBeDefined();
+  expect(res.skills.length).toEqual(2);
+  expect(res.experiences).toBeDefined();
+  expect(res.experiences.length).toEqual(1);
 })
 
 test('load resume should fail when type mismatches', async () => {  
@@ -48,10 +48,8 @@ test('load resume should fail when type mismatches', async () => {
   
   const sut = new ResumeLoaderService('file');
 
-  let res: Resume | null = null
-  try {
-    res = await sut.loadResume();
-  } catch {}
+  await expect(sut.loadResume()).rejects.toThrowError('Not a Resume data type!');
 
-  expect(res).toBeNullable();
+  spy.mockResolvedValue(1);
+  await expect(sut.loadResume()).rejects.toThrowError('Not a Resume data type!');
 })

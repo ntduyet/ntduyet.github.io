@@ -52,7 +52,7 @@ export default async function Container({
     const resume = await resumeLoaderService.loadResume();
     return <Component>{resumeComponents(resume)}</Component>;
   } catch (e) {
-    console.log(e);
+    console.error(`Failed to load resume: ${e}`);
     return (
       <Component>
         <h1>Oops, failed to load resume.</h1>
