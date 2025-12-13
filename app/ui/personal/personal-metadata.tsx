@@ -1,7 +1,7 @@
 'use client';
 
-import { Metadata } from '../../services/resume-loader'
-import FontAwesomeIcon from '@/app/ui/font-awesome-icon';
+import { Metadata } from '@/app/services/resume-loader'
+import FontAwesomeIcon from '@/app/ui/font-awesome-icon'
 
 export default function PersonalMetadata({ metadata, align } : { metadata: Metadata, align: 'left' | 'right' }) {
   function iconSpan(): React.ReactNode {
