@@ -1,7 +1,7 @@
-import { ResumeLoaderService } from "./services/resume-loader";
+import { ResumeLoaderService } from "@/app/services/resume-loader"
 import path from 'path'
 
-import Container from './ui/container'
+import Container from '@/app/ui/container'
 
 export default function App() {
   const filePath = path.join(process.cwd(), './config/resume.yaml');

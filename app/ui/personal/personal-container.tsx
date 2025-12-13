@@ -1,13 +1,13 @@
 import PersonalDetails from "./personal-details";
 import PersonalMetadataList from "./personal-metadata-list";
-import { Person, Metadata } from "../../services/resume-loader";
+import { Person, Metadata } from "@/app/services/resume-loader";
 
 export default function PersonalContainer({
   person,
-  metadatas,
+  metadatas
 }: {
-  person: Person;
-  metadatas: Metadata[];
+  person: Person,
+  metadatas: Metadata[]
 }) {
   return (
     <div className="personal-container grid grid-cols-[auto_auto] items-start gap-[12px]">

@@ -7,6 +7,12 @@ const iconMap = new Map([
 ])
 
 export default function FontAwesomeIcon({ type, className, onClick }: { type: string, className?: string, onClick?: () => void }) {
-  const finalClassName = iconMap.get(type) + ' ' + className;
+  const iconClass = iconMap.get(type);
+  if (!iconClass) return null;
+
+  let finalClassName = `${iconClass}`;
+  if (className !== undefined) {
+    finalClassName += ` ${className}`
+  }
   return <span className={finalClassName} onClick={ () => onClick?.() } />;
 }
