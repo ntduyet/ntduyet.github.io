@@ -4,7 +4,7 @@
 [![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-![Vitest](https://img.shields.io/badge/Tested_with-Vitest-6E9F18?style=flat&logo=vitest&logoColor=white)
+[![Vitest](https://img.shields.io/badge/Tested_with-Vitest-6E9F18?style=flat&logo=vitest&logoColor=white)](https://vitest.dev/)
 [![Coverage Status](https://coveralls.io/repos/github/ntduyet/ntduyet.github.io/badge.svg?branch=main)](https://coveralls.io/github/ntduyet/ntduyet.github.io?branch=main)
 
 > 🚀 A personal learning project to explore web development by building a **templated resume generator** with **React**, **Next.js**, and **Tailwind CSS**.
@@ -53,10 +53,13 @@ The repository is organized to keep configuration, assets, and application logic
 | **`app/`** | Contains all main application pages and components used by Next.js. |
 | **`config/`** | YAML configuration files defining resume content. |
 | **`public/`** | Includes static resources like images and icons. |
-| **`.github/workflows/`** | GitHub Actions for automated build & deployment. |
-| **`package.json`** | Lists dependencies, scripts, and project metadata. |
-| **`tailwind.config.mjs`** | TailwindCSS setup for custom styles and themes. |
-| **`tsconfig.json`** | TypeScript configuration for type checking and build settings. |
+| **`tests/`** | Unit and integration tests. Contains:<br>• `ui/` – component‑level tests for presentation logic.<br>• `services/` – tests for data‑loading and business logic.<br>• `utils/` – shared test utilities like mocks, factory helpers, and render wrappers. |
+| **`.github/workflows/`** | GitHub Actions for automated build, lint, test, and deployment pipelines. |
+| **`eslint.config.mjs`** | ESLint configuration defining code‑style rules, TypeScript, and import conventions used for linting during CI/CD. |
+| **`vitest.config.ts`** | Vitest configuration file controlling test environment setup, alias resolution (`@/`), code‑coverage thresholds, and JSDOM settings. |
+| **`package.json`** | Lists dependencies, test/lint/build scripts, and project metadata. |
+| **`tailwind.config.mjs`** | TailwindCSS setup with custom color palette, typography, and theme extensions. |
+| **`tsconfig.json`** | TypeScript compiler configuration for strict typing, path aliases, and incremental builds. |
 
 > 🧠 This structure is optimized for scalability — you can easily add new resume templates, pages, or configuration files as the project grows.
 
