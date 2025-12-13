@@ -32,7 +32,7 @@ export interface Education {
 }
 
 export interface Resume {
-  person: { name: string; title: string }
+  person: Person
   summary: string
   metadatas: Metadata[]
   education: Education
