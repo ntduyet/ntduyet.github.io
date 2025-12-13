@@ -2,7 +2,7 @@ import '@testing-library/jest-dom'
 import { mockComponent } from '@/tests/utils/mock-component';
 
 import { Suspense, JSX } from 'react';
-import { act, cleanup, render, screen } from "@testing-library/react";
+import { act, cleanup, render } from "@testing-library/react";
 import { test, vi, Mock, describe, expect, it } from 'vitest'
 import { IResumeLoaderService, Resume } from '@/app/services/resume-loader';
 
