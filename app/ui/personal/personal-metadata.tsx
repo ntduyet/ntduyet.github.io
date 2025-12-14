@@ -10,14 +10,14 @@ export default function PersonalMetadata({ metadata, align } : { metadata: Metad
   };
 
   function handleOnClick() {
-    if (metadata.link === undefined) return;
+    if (!metadata.link) return;
 
     const target = metadata.link.startsWith('http') ? '_blank' : '_self';
     window.open(metadata.link, target);
   }
 
   let className = "mt-2 mb-2 items-center";
-  if (metadata.link !== undefined)
+  if (metadata.link)
     className += ' cursor-pointer transition duration-300 ease-in-out hover:scale-105';
   return (
     <p className={className} onClick={handleOnClick}>
