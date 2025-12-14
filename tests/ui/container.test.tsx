@@ -1,10 +1,10 @@
 import '@testing-library/jest-dom'
-import { mockComponent } from '@/tests/utils/mock-component';
+import { mockComponent } from '@/tests/utils/mock-component'
 
 import { Suspense, JSX } from 'react';
-import { act, cleanup, render } from "@testing-library/react";
-import { test, vi, Mock, describe, expect, it } from 'vitest'
-import { IResumeLoaderService, Resume } from '@/app/services/resume-loader';
+import { act, cleanup, render } from '@testing-library/react'
+import { afterEach, beforeEach, test, vi, Mock, describe, expect, it } from 'vitest'
+import { IResumeLoaderService, Resume } from '@/app/services/resume-loader'
 
 import Container from '@/app/ui/container';
 
@@ -13,13 +13,14 @@ describe('container', () => {
   let service: MockService
   let loadResumeSpy: Mock<typeof service.loadResume>
 
-  test.beforeEach(() => {
+  beforeEach(() => {
     vi.clearAllMocks();
+
     [sut, service] = makeSut();
     loadResumeSpy = vi.spyOn(service, 'loadResume');
   })
 
-  test.afterEach(() => cleanup());
+  afterEach(cleanup);
 
   describe('failure', () => {
     it('should load resume and render error', async () => {
@@ -31,12 +32,12 @@ describe('container', () => {
       if (!root) 
         expect.fail('root should exist');
 
-      expect(root).toHaveClass('root mt-0 mb-0 ml-[12px] mr-[12px] pt-[24px] pb-[144px] grid gap-[24px]');
-      expect(root?.parentElement).toHaveClass('max-w-5xl m-auto');
+      expect(root).toHaveClass('root mt-0 mb-0 ml-[12px] mr-[12px] pt-[24px] pb-[144px] grid gap-[24px]', { exact: true });
+      expect(root.parentElement).toHaveClass('max-w-5xl m-auto', { exact: true });
       expect(root.children.length).toEqual(1);
 
-      const h1 = root.firstElementChild;
-      expect(h1!.tagName).toEqual('H1');
+      const h1 = root.children[0];
+      expect(h1.tagName).toEqual('H1');
       expect(h1).toHaveTextContent('Oops, failed to load resume.');
     })
   })
@@ -49,7 +50,7 @@ describe('container', () => {
     let educationSpy: Mock<any>
     let groupSectionSpy: Mock<any>
 
-    test.beforeEach(async () => {
+    beforeEach(async () => {
       personalSpy = await mockComponent('mocked-personal-container', '@/app/ui/personal/personal-container');
       summarySpy = await mockComponent('mocked-summary', '@/app/ui/personal/summary');
       skillsSpy = await mockComponent('mocked-skill-list', '@/app/ui/skills/skill-list');
@@ -95,8 +96,8 @@ describe('container', () => {
         expect.fail('root should exist');
 
       expect(root).toBeDefined();
-      expect(root).toHaveClass('root mt-0 mb-0 ml-[12px] mr-[12px] pt-[24px] pb-[144px] grid gap-[24px]');
-      expect(root?.parentElement).toHaveClass('max-w-5xl m-auto');
+      expect(root).toHaveClass('root mt-0 mb-0 ml-[12px] mr-[12px] pt-[24px] pb-[144px] grid gap-[24px]', { exact: true });
+      expect(root?.parentElement).toHaveClass('max-w-5xl m-auto', { exact: true });
 
       const children = root?.children ?? [];
       expect(children.length).toEqual(5);

@@ -1,23 +1,23 @@
 import '@testing-library/jest-dom'
+import { makeSut } from '@/tests/utils/make-component'
 
-import { JSX } from 'react'
-import { describe, expect, it, test } from 'vitest'
-import { render, cleanup } from '@testing-library/react'
+import { cleanup } from '@testing-library/react'
+import { afterEach, describe, expect, it } from 'vitest'
 
 import GroupSection from '@/app/ui/group-section'
 
 describe('group section', () => {
-  test.afterEach(cleanup);
+  afterEach(cleanup);
 
   describe('single child', () => {
     it('should render correctly', () => {
       const title = 'single title';
-      const [_, container] = makeSut(title, <button key='button' id='test-button-id' />);
+      const { container } = makeSut(GroupSection, { title: title, children: <button key='button' id='test-button-id' /> });
       
       expect(container.childElementCount).toEqual(1);
 
       const div = container.children[0];
-      expect(div).toHaveClass('group-section grid gap-[12px]');
+      expect(div).toHaveClass('group-section grid gap-[12px]', { exact: true });
       expect(div.childElementCount).toEqual(2);
 
       expectToHaveH2(div, title);
@@ -30,12 +30,15 @@ describe('group section', () => {
   describe('multiple children', () => {
     it('should render correctly', () => {
       const title = 'multiple title';
-      const [_, container] = makeSut(title, <a key='a' id='test-a-id'/>, <button key='button' id='test-button-id' />);
+      const { container } = makeSut(GroupSection, { 
+        title: title,
+        children: [<a key='a' id='test-a-id'/>, <button key='button' id='test-button-id' />]
+      })
       
       expect(container.childElementCount).toEqual(1);
 
       const div = container.children[0];
-      expect(div).toHaveClass('group-section grid gap-[12px]');
+      expect(div).toHaveClass('group-section grid gap-[12px]', { exact: true });
       expect(div.childElementCount).toEqual(3);
 
       expectToHaveH2(div, title);
@@ -51,16 +54,10 @@ describe('group section', () => {
 
 // #region Mocks & Helpers
 
-function makeSut(title: string, ...children: React.ReactNode[]): [JSX.Element, HTMLElement] {
-  const sut = (<GroupSection title={title}>{children}</GroupSection>);
-  const { container } = render(sut);
-  return [sut, container];
-}
-
 function expectToHaveH2(root: Element, title: string) {
   const h2 = root.firstElementChild;
   expect(h2).toHaveTextContent(title.toUpperCase());
-  expect(h2).toHaveClass('pb-[12px] border-b border-b-[#5e5e5e]');
+  expect(h2).toHaveClass('pb-[12px] border-b border-b-[#5e5e5e]', { exact: true });
 }
 
 // #endregion

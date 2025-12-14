@@ -1,15 +1,12 @@
-'use strict';
-
-import { Metadata } from "../../services/resume-loader";
-import PersonalMetadata from "./personal-metadata";
+import { Metadata } from '@/app/services/resume-loader'
+import PersonalMetadata from '@/app/ui/personal/personal-metadata'
 
 export default function PersonalMetadataList({ 
   className, 
   metadatas, 
   align 
 } : { 
-  className?: 
-  string, 
+  className?: string, 
   metadatas: Metadata[],
   align: 'left' | 'right' 
 }) {
@@ -18,7 +15,7 @@ export default function PersonalMetadataList({
   }
 
   let finalClassName = 'personal-metadata-list w-full'
-  if (className !== undefined) {
+  if (className) {
     finalClassName += ` ${className}`;
   } 
 
