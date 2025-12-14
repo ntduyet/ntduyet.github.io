@@ -1,22 +1,25 @@
 import '@testing-library/jest-dom'
 import { mockComponent } from '@/tests/utils/mock-component'
+import { makeSut } from '@/tests/utils/make-component'
 
-import { describe, expect, it, Mock, test } from 'vitest'
-import { cleanup, render } from '@testing-library/react'
+import { afterEach, beforeEach, describe, expect, it, Mock, test, vi } from 'vitest'
+import { cleanup } from '@testing-library/react'
 
 import Summary from '@/app/ui/personal/summary'
 
 describe('summary', () => {
   let fontAwesomeIconSpy: Mock<any>
 
-  test.beforeEach(async () => {
+  beforeEach(async () => {
+    vi.clearAllMocks();
+    
     fontAwesomeIconSpy = await mockComponent('mocked-font-awesome-icon', '@/app/ui/font-awesome-icon');
   })
 
-  test.afterEach(cleanup);
+  afterEach(cleanup);
 
   it('should use correct component', () => {
-    render(<Summary content='content' />);
+    makeSut(Summary, { content: 'content' });
 
     expect(fontAwesomeIconSpy.getProps()).toEqual(
       [{ type: 'quote', className: 'mt-[6px] pr-[6px]'}]
@@ -25,13 +28,13 @@ describe('summary', () => {
 
   it('should render correctly', () => {
     const content = 'my summary content';
-    const { container } = render(<Summary content={content} />);
+    const { container } = makeSut(Summary, { content: content });
 
     expect(container.childElementCount).toBe(1);
 
     const p = container.children[0];
     expect(p.tagName).toBe('P');
-    expect(p).toHaveClass('flex items-start');
+    expect(p).toHaveClass('flex items-start', { exact: true });
     expect(p.childElementCount).toBe(2);
 
     const icon = p.children[0];
@@ -40,6 +43,6 @@ describe('summary', () => {
     const i = p.children[1];
     expect(i.tagName).toBe('I');
     expect(i).toHaveTextContent(content);
-    expect(i).toHaveClass('text-neutral-500');
+    expect(i).toHaveClass('text-neutral-500', { exact: true });
   })
 })

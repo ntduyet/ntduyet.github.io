@@ -1,8 +1,9 @@
 import '@testing-library/jest-dom'
 import { mockComponent } from '@/tests/utils/mock-component'
+import { makeSut } from '@/tests/utils/make-component'
 
-import { render, cleanup, fireEvent } from '@testing-library/react'
-import { describe, expect, it, Mock, test, vi } from 'vitest'
+import { cleanup, fireEvent } from '@testing-library/react'
+import { afterEach, beforeEach, describe, expect, it, Mock, vi } from 'vitest'
 
 import { Metadata } from '@/app/services/resume-loader'
 import PersonalMetadata from '@/app/ui/personal/personal-metadata'
@@ -10,34 +11,32 @@ import PersonalMetadata from '@/app/ui/personal/personal-metadata'
 describe('personal metadata', () => {
   let iconSpy: Mock<any>
   let openLinkSpy: Mock<typeof window.open>
-  let container: HTMLElement
 
-  test.beforeEach(async () => {
+  beforeEach(async () => {
+    vi.clearAllMocks();
+
     iconSpy = await mockComponent('mock-icon', '@/app/ui/font-awesome-icon');
     openLinkSpy = vi.spyOn(window, 'open');
-    openLinkSpy.mockImplementation((args) => window);
+    openLinkSpy.mockImplementation(() => window);
   })
 
-  test.afterEach(() => {
-    vi.clearAllMocks();
-    cleanup();
-  });
+  afterEach(cleanup);
 
   describe('left align', () => {
-    test.beforeEach(() => {
-      container = makeSut(metadata, 'left');
-    })
-
     it('should use correct component', () => {
+      const { container } = makeSut(PersonalMetadata, { metadata: metadata, align: 'left' })
+
       expect(iconSpy.getProps()).toEqual([{ className: 'mr-[12px]', type: metadata.id }])
     })
 
     it('should render correctly', () => {
+      const { container } = makeSut(PersonalMetadata, { metadata: metadata, align: 'left' })
+      
       expect(container.childElementCount).toBe(1);
 
       const p = container.children[0];
       expect(p.tagName).toBe('P');
-      expect(p).toHaveClass('mt-2 mb-2 items-center');
+      expect(p).toHaveClass('mt-2 mb-2 items-center', { exact: true });
       expect(p.childNodes.length).toBe(2);
 
       expect(p.childNodes[0].nodeName).toBe('SPAN');
@@ -45,6 +44,7 @@ describe('personal metadata', () => {
     })
 
     it('should do nothing when clicked', () => {
+      const { container } = makeSut(PersonalMetadata, { metadata: metadata, align: 'left' })
       const p = container.children[0];
 
       fireEvent.click(p);
@@ -54,15 +54,15 @@ describe('personal metadata', () => {
   })
 
   describe('right align', () => {
-    test.beforeEach(() => {
-      container = makeSut(metadata, 'right');
-    })
-
     it('should use correct component', () => {
+      const { container } = makeSut(PersonalMetadata, { metadata: metadata, align: 'right' })
+
       expect(iconSpy.getProps()).toEqual([{ className: 'ml-[12px]', type: metadata.id }])
     })
 
     it('should render correctly', () => {
+      const { container } = makeSut(PersonalMetadata, { metadata: metadata, align: 'right' });
+
       expect(container.childElementCount).toBe(1);
 
       const p = container.children[0];
@@ -77,7 +77,7 @@ describe('personal metadata', () => {
 
   describe('with link', () => {
     it('should have hover behavior', () => {
-      container = makeSut(metadataWithWeb, 'left');
+      const { container } = makeSut(PersonalMetadata, {metadata: metadataWithWeb, align: 'left' })
 
       expect(container.childElementCount).toBe(1);
 
@@ -88,7 +88,7 @@ describe('personal metadata', () => {
 
     describe('web', () => {
       it('should open in new tab when clicked', () => {
-        const container = makeSut(metadataWithWeb, 'left');
+        const { container } = makeSut(PersonalMetadata, {metadata: metadataWithWeb, align: 'left' })
         const p = container.children[0];
 
         fireEvent.click(p);
@@ -99,7 +99,7 @@ describe('personal metadata', () => {
 
     describe('deep link', () => {
       it('should remain on current tab when clicked', () => {
-        const container = makeSut(metadataWithDeepLink, 'left');
+        const { container } = makeSut(PersonalMetadata, {metadata: metadataWithDeepLink, align: 'left' })
         const p = container.children[0];
 
         fireEvent.click(p);
@@ -111,12 +111,6 @@ describe('personal metadata', () => {
 })
 
 // #region Mocks & Helpers
-
-function makeSut(metadata: Metadata, align: 'left' | 'right'): HTMLElement {
-  const sut = <PersonalMetadata metadata={metadata} align={align} />
-  const { container } = render(sut);
-  return container;
-}
 
 const metadata: Metadata = { id: 'email', value: 'email@me.io' }
 const metadataWithWeb: Metadata = { id: 'email', value: 'email@me.io', link: 'https://email.me' }

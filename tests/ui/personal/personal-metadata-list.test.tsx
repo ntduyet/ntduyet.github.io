@@ -12,13 +12,12 @@ describe('personal metadata list', () => {
   let metadataSpy: Mock<any>
 
   beforeEach(async () => {
+    vi.clearAllMocks();
+
     metadataSpy = await mockComponent('mock-metadata', '@/app/ui/personal/personal-metadata');
   })
 
-  afterEach(() => {
-    vi.clearAllMocks();
-    cleanup();
-  })
+  afterEach(cleanup);
 
   describe('left align', () => {
     it('should use correct component', () => {
