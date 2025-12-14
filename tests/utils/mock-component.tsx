@@ -14,7 +14,7 @@ export async function mockComponent(id: string, modulePath: string): Promise<Moc
     return this.mock.calls.map(c => c[0]);
   }
   spy.mockImplementation(props => {
-    return (<div id={id} data-testid={id} data-props={JSON.stringify(props)} />);
+    return (<span id={id} data-testid={id} data-props={JSON.stringify(props)} />);
   });
 
   return spy;
