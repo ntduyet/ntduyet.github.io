@@ -44,6 +44,13 @@ describe('font-awesome icon', () => {
     })
   })
 
+  describe('quote', () => {
+    it('should have correct class name', () => {
+      const [_, container] = makeSut('quote');
+      expectToHaveSpan(container, 'fa-sharp fa-solid fa-quote-left fa-lg');
+    })
+  })
+
   describe('className prop', () => {
     it('should have correct class name', () => {
       const [_, container] = makeSut('email', 'class1 class2');
