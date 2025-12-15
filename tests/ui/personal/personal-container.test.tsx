@@ -26,7 +26,7 @@ describe('personal container', () => {
 
     expect(detailsSpy.getProps()).toEqual([{ person: person }]);
     expect(metadataListSpy.getProps()).toEqual([
-      { className: 'text-lef row-start-2 col-span-1 sm:hidden', metadatas: metadatas, align: 'left' },
+      { className: 'text-left row-start-2 col-span-1 sm:hidden', metadatas: metadatas, align: 'left' },
       { className: 'text-right row-[1_/1_] sm:col-[2_/2_] hidden sm:grid', metadatas: metadatas, align: 'right' },
     ])
   })
@@ -38,7 +38,7 @@ describe('personal container', () => {
 
     const div = container.children[0];
     expect(div.tagName).toBe('DIV');
-    expect(div).toHaveClass('personal-container grid grid-cols-[auto_auto] items-start gap-[12px]');
+    expect(div).toHaveClass('personal-container grid grid-cols-[auto_auto] items-start gap-[12px]', { exact: true });
     expect(div.childElementCount).toBe(3);
 
     const details = div.children[0];

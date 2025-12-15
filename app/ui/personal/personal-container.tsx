@@ -13,7 +13,7 @@ export default function PersonalContainer({
     <div className="personal-container grid grid-cols-[auto_auto] items-start gap-[12px]">
       <PersonalDetails person={person} />
       <PersonalMetadataList
-        className="text-lef row-start-2 col-span-1 sm:hidden"
+        className="text-left row-start-2 col-span-1 sm:hidden"
         metadatas={metadatas}
         align="left"
       />
