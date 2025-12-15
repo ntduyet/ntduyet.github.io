@@ -1,11 +1,11 @@
-import PersonalDetails from "./personal-details";
-import PersonalMetadataList from "./personal-metadata-list";
-import { Person, Metadata } from "@/app/services/resume-loader";
+import PersonalDetails from '@/app/ui/personal/personal-details'
+import PersonalMetadataList from '@/app/ui/personal/personal-metadata-list'
+import { Person, Metadata } from "@/app/services/resume-loader"
 
 export default function PersonalContainer({
   person,
   metadatas
-}: {
+} : {
   person: Person,
   metadatas: Metadata[]
 }) {
