@@ -1,7 +1,8 @@
 import '@testing-library/jest-dom'
 import { makeSut } from '@/tests/utils/make-component'
 
-import { render, fireEvent, cleanup } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
+import { cleanup } from '@testing-library/react'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 
 import FontAwesomeIcon from '@/app/ui/font-awesome-icon'
@@ -67,11 +68,13 @@ describe('font-awesome icon', () => {
 
   describe('click event', () => {
     it('should invoke action', async () => {
+      const user = userEvent.setup();
+
       const mockMethod = vi.fn();
       const { container } = makeSut(FontAwesomeIcon, { type: 'email', onClick: mockMethod });
 
       const span = container.firstElementChild;
-      fireEvent.click(span!);
+      await user.click(span!);
 
       expect(mockMethod).toHaveBeenCalledOnce();
     })
