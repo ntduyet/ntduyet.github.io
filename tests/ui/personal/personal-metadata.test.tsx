@@ -2,7 +2,8 @@ import '@testing-library/jest-dom'
 import { mockComponent } from '@/tests/utils/mock-component'
 import { makeSut } from '@/tests/utils/make-component'
 
-import { cleanup, fireEvent } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
+import { cleanup } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, Mock, vi } from 'vitest'
 
 import { Metadata } from '@/app/services/resume-loader'
@@ -43,11 +44,13 @@ describe('personal metadata', () => {
       expect(p.childNodes[1].nodeName).toBe('#text');
     })
 
-    it('should do nothing when clicked', () => {
+    it('should do nothing when clicked', async () => {
+      const user = userEvent.setup();
+
       const { container } = makeSut(PersonalMetadata, { metadata: metadata, align: 'left' })
       const p = container.children[0];
 
-      fireEvent.click(p);
+      await user.click(p);
 
       expect(openLinkSpy).toBeCalledTimes(0);
     })
@@ -55,7 +58,7 @@ describe('personal metadata', () => {
 
   describe('right align', () => {
     it('should use correct component', () => {
-      const { container } = makeSut(PersonalMetadata, { metadata: metadata, align: 'right' })
+      makeSut(PersonalMetadata, { metadata: metadata, align: 'right' })
 
       expect(iconSpy.getProps()).toEqual([{ className: 'ml-[12px]', type: metadata.id }])
     })
@@ -87,22 +90,26 @@ describe('personal metadata', () => {
     })
 
     describe('web', () => {
-      it('should open in new tab when clicked', () => {
+      it('should open in new tab when clicked', async () => {
+        const user = userEvent.setup();
+
         const { container } = makeSut(PersonalMetadata, {metadata: metadataWithWeb, align: 'left' })
         const p = container.children[0];
 
-        fireEvent.click(p);
+        await user.click(p);
 
         expect(openLinkSpy).toHaveBeenCalledExactlyOnceWith(metadataWithWeb.link, '_blank');
       })
     })
 
     describe('deep link', () => {
-      it('should remain on current tab when clicked', () => {
+      it('should remain on current tab when clicked', async () => {
+        const user = userEvent.setup();
+
         const { container } = makeSut(PersonalMetadata, {metadata: metadataWithDeepLink, align: 'left' })
         const p = container.children[0];
 
-        fireEvent.click(p);
+        await user.click(p);
 
         expect(openLinkSpy).toHaveBeenCalledExactlyOnceWith(metadataWithDeepLink.link, '_self');
       });
