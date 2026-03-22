@@ -46,12 +46,12 @@ skills:
   - High sense of responsibility
 experiences:
   - company:
-      name: E-commerce Client (Confidential)
+      name: Confidential E-commerce Client
       website: https://ntduyet.github.io
     position: Lead iOS Engineer, Consultant
-    duration: 01/2026 - Present
+    duration: Jan 2026 - Present
     tasks:
-      - Led migration of a legacy SwiftUI authentication system (v1 → modular v2), maintaining 99.9% login success rate throughout the rollout.
+      - Led migration of a legacy SwiftUI authentication system (v1 to modular v2), maintaining 99.9% login success rate throughout the rollout.
       - Architected a modular authentication framework improving separation of concerns, increasing test coverage from ~65% to 95%, and enabling seamless reuse across multiple app targets.
       - Designed and implemented a reusable network client layer with middleware-based interceptor architecture supporting centralized logging, token refresh, and dynamic header injection.
       - Introduced Xcode test iteration support within CI workflows, accelerating feedback loops and improving stability when isolating flaky tests.
@@ -61,10 +61,10 @@ experiences:
       website: https://www.linkedin.com/company/okxofficial/about/
     position: Senior Software Engineer, iOS
     location: Singapore
-    duration: 05/2024 - 09/2025
+    duration: May 2024 - Sep 2025
     tasks:
       - Spearheaded architecture modernization across 3 core repositories, introducing a standardized MVVM variant and coding conventions adopted by 8 engineers, reducing architectural inconsistencies and accelerating feature delivery.
-      - Led performance optimization efforts, reducing first page load time by ~68% (2100ms → 680ms), significantly improving app responsiveness.
+      - Led performance optimization efforts, reducing first page load time by ~68% (2100ms to 680ms), significantly improving app responsiveness.
       - Elevated team-wide engineering standards by enforcing modular boundaries, enhancing overall system stability, reducing critical crashes, and boosting unit test coverage.
       - Drove substantial gains in development eﬃciency by integrating AI-assisted coding, allowing the team to shift focus to critical problem-solving and innovation over repetitive tasks.
       - Mentored and guided junior engineers through complex refactoring projects, consistent code reviews, and technical consultations, ensuring successful high-quality project delivery and adherence to best practices.
@@ -72,7 +72,7 @@ experiences:
       name: TikTok
       website: https://www.linkedin.com/company/tiktok/about
     position: Software Engineer, Messaging iOS
-    duration: 12/2022 - 05/2024
+    duration: Dec 2022 - May 2024
     location: Singapore
     tasks:
       - Delivered 6 large-scale messaging features used by millions of daily active users, ensuring high performance and maintainability through modular design and comprehensive unit/snapshot testing.
@@ -82,7 +82,7 @@ experiences:
       name: Bloomberg LP
       website: https://www.linkedin.com/company/bloomberg/about
     position: Senior Software Engineer, iOS
-    duration: 02/2022 - 11/2022
+    duration: Feb 2022 - Nov 2022
     location: London, United Kingdom
     tasks:
       - Refactored oﬄine login flow and rolled out to 100% of users successfully.
@@ -92,7 +92,7 @@ experiences:
       name: Delivery Hero SE
       website: https://www.linkedin.com/company/delivery-hero-se/about
     position: Software Engineer, iOS
-    duration: 03/2021 - 01/2022
+    duration: Mar 2021 - Jan 2022
     location: Berlin, Germany
     tasks:
       - Delivered the native customer feedback collection feature to replace the old web view-based experience ahead of timeline.
@@ -103,7 +103,7 @@ experiences:
       name: Grab
       website: https://www.linkedin.com/company/grabapp/about
     position: Senior Software Engineer, iOS
-    duration: 09/2018 - 11/2020
+    duration: Sep 2018 - Nov 2020
     location: Singapore
     tasks:
       - Delivered 12 large-scale driver-facing features and 6 engineering improvement initiatives, coordinating across cross-functional stakeholders to ensure timely delivery with full unit/UI test coverage.
@@ -115,7 +115,7 @@ experiences:
       name: Misfit Wearables & Fossil Group, Inc
       website: https://www.linkedin.com/company/fossil/about
     position: Software Engineer, iOS
-    duration: 09/2015 - 08/2018
+    duration: Sep 2015 - Aug 2018
     location: Ho Chi Minh City, Vietnam
     tasks:
       - Took over iOS apps development (from Fossil's former team) to interact with company's products using Bluetooth Low Energy technology (Hybrid Smartwatch) for many brands (Fossil Q, Michael Kors, Emporio Armani, Kate Spade New York...). The apps support more than 20 languages (being pulled once there is an update from the server-side).
