@@ -45,3 +45,162 @@
     @apply text-xl;
   }
 }
+
+/*
+ * A4. Horizontal margins tight; extra top/bottom margin is fine but changes where page breaks
+ * land — Chrome often mis-paints multi-row CSS Grid across breaks (overlapping text). Print
+ * layout forces block flow below to avoid that.
+ */
+@page {
+  size: A4;
+  margin-left: 0.2in;
+  margin-right: 0.2in;
+  margin-top: 0.5in;
+  margin-bottom: 0.5in;
+}
+
+@media print {
+  /*
+   * Print uses a wide viewport, so Tailwind @screen sm (min-width: 640px) still applies
+   * and blows up type. Force résumé-sized typography regardless of breakpoint.
+   */
+  html {
+    font-size: 8pt;
+    line-height: 1.35;
+  }
+
+  /*
+   * Match the site: headings only differ by size in @layer base; Ubuntu loads 300/400 only,
+   * so weight stays regular. Print UA styles would otherwise look heavier than the page.
+   */
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-weight: 400;
+  }
+
+  /*
+   * Heading steps = 0.75 × on-screen sm rem scale (Tailwind text-4xl/3xl/2xl/xl → 36/30/24/20px),
+   * so ratio 2.25 : 1.875 : 1.5 : 1.25 is preserved at 27 : 22.5 : 18 : 15px.
+   */
+  h1 {
+    font-size: 11.25pt;
+    line-height: 1.15;
+  }
+
+  h2 {
+    font-size: 6.1875pt;
+    line-height: 1.2;
+  }
+
+  h3 {
+    font-size: 6.75pt;
+    line-height: 1.25;
+  }
+
+  h4 {
+    font-size: 6pt;
+    line-height: 1.25;
+  }
+
+  /* text-2xl / text-xl at 0.75× screen px */
+  .experience-item h3 {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+
+  .experience-item h4 {
+    font-size: 15px;
+    line-height: 1.25;
+  }
+
+  .education-item h3 {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+
+  .education-item h4 {
+    font-size: 15px;
+    line-height: 1.25;
+  }
+
+  /*
+   * Work entries are sibling grid rows under .group-section; print gap was tightened to 4.5pt
+   * for the whole section, which leaves almost no band between jobs.
+   * Use padding (not margin): margin-top on a box that starts at the top of a new page often
+   * collapses against the page edge in print, so page 2 looked unchanged.
+   */
+  .group-section .experience-item + .experience-item {
+    padding-top: 6pt;
+  }
+
+  /*
+   * Grid fragmentation in Chrome/Safari print can stack row boxes on top of each other when
+   * breaks fall between “rows”. Block layout fragments like normal document flow.
+   */
+  .root {
+    display: block !important;
+    margin: 0;
+    padding: 0;
+    max-width: none;
+    gap: 0 !important;
+  }
+
+  .root > *:not(:last-child) {
+    margin-bottom: 7.5pt;
+  }
+
+  .group-section {
+    display: block !important;
+    gap: 0 !important;
+  }
+
+  .group-section > h2 {
+    margin-bottom: 4.5pt;
+  }
+
+  .experience-item {
+    display: block !important;
+  }
+
+  /* text-3xl at 0.75× screen px */
+  .group-section h2 {
+    font-size: 22.5px;
+    line-height: 1.2;
+    break-after: avoid;
+    padding-bottom: 6px !important;
+  }
+
+  /* Long jobs must be allowed to split across pages. */
+  .education-item {
+    break-inside: avoid;
+  }
+
+  /* text-4xl / text-2xl at 0.75× screen px */
+  .personal-details-container h1 {
+    font-size: 27px;
+    line-height: 1.1;
+  }
+
+  .personal-details-container h3 {
+    font-size: 18px;
+    line-height: 1.25;
+  }
+
+  .personal-details-container .avatar {
+    width: 20% !important;
+    min-width: 75px !important;
+    max-width: none !important;
+    max-height: none !important;
+    height: auto !important;
+  }
+
+  .personal-container {
+    gap: 6pt !important;
+  }
+
+  .skill-list {
+    gap: 3pt !important;
+  }
+}
