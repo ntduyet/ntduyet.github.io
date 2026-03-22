@@ -67,7 +67,7 @@ describe('container', () => {
       expect(personalSpy.getProps()).toEqual([{ person: resume.person, metadatas: resume.metadatas }]);
       expect(summarySpy.getProps()).toEqual([{ content: resume.summary }]);
 
-      expect(groupSectionSpy.getProps().map(p => p.title)).toEqual(['Skills', 'Work Experiences', 'Education']);
+      expect(groupSectionSpy.getProps().map(p => p.title)).toEqual(['Skills', 'Work Experience', 'Education']);
 
       expect(skillsSpy.getProps()).toEqual([{ items: resume.skills }]);
       expect(experiencesSpy.getProps()).toEqual([{ items: resume.experiences }]);
