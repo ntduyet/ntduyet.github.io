@@ -1,0 +1,31 @@
+---
+description: Next.js App Router, React, TypeScript, and Tailwind for app code
+globs: app/**/*.{ts,tsx}
+alwaysApply: false
+---
+
+# Next.js, React, TypeScript, Tailwind
+
+## App Router
+
+- Use the App Router patterns already in the repo (`app/layout.tsx`, `app/page.tsx`).
+- Add `'use client'` only when the component needs client-only APIs (hooks, browser APIs, event handlers that require client boundaries). Default to server components when possible.
+
+## TypeScript
+
+- `strict` is enabled: prefer explicit prop types (interfaces/types or inline `{ prop: Type }`). Avoid `any`; use `unknown` and narrow when needed.
+- Use `import type { ... }` for type-only imports where it improves clarity and matches nearby files.
+
+## React
+
+- Prefer small, composable presentational components under `app/ui/`.
+- Keep default-export component style consistent with siblings in the same folder.
+
+## Tailwind CSS
+
+- Utility-first classes; follow spacing, typography, and color patterns from neighboring components.
+- Prefer semantic structure (landmarks, headings) where it fits the resume layout.
+
+## Imports
+
+- Use the `@/` alias (e.g. `@/app/ui/...`, `@/app/services/...`).

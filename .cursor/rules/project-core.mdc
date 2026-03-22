@@ -1,0 +1,34 @@
+---
+description: Repo layout, commands, and general conventions for this Next.js resume site
+alwaysApply: true
+---
+
+# Project core
+
+## Layout
+
+- **`app/`** — Next.js App Router: `layout.tsx`, `page.tsx`, UI under `app/ui/`, data loading under `app/services/` (e.g. YAML/resume loaders).
+- **`tests/`** — Vitest + Testing Library; files match `tests/**/*.test.{js,ts,jsx,tsx}` (see `vitest.config.ts`).
+- **`scripts/`** — Build/support scripts (ESLint ignores this tree).
+
+## Path alias
+
+- `@/*` maps to the repository root (`tsconfig.json` `paths`). Prefer `@/app/...` and `@/tests/...` for imports.
+
+## Commands
+
+- `npm run dev` — Next dev server
+- `npm run build` — production build
+- `npm run test` — Vitest (watch)
+- `npm run lint` — ESLint
+- `npm run format` — Prettier write
+
+## Editing discipline
+
+- Keep changes minimal and scoped to the task; avoid unrelated refactors.
+- Match naming, import style, and quote style used in neighboring files in the same directory.
+- Formatting: Prettier is the source of truth for formatting; ESLint handles lint rules (see `eslint.config.mjs`). Do not fight Prettier with manual layout.
+
+## Scope
+
+- Restrict edits to this repository/worktree unless the user explicitly asks otherwise.
