@@ -19,7 +19,7 @@ describe('skill item', () => {
 
     const div = container.children[0];
     expect(div.tagName).toBe('DIV');
-    expect(div).toHaveClass('skill-item bg-slate-800 text-xs text-center text-white rounded-full pt-[6px] pb-[6px] pl-[12px] pr-[12px]', { exact: true });
+    expect(div).toHaveClass('skill-item bg-slate-800 text-sm text-center text-white rounded-full py-1.5 px-3', { exact: true });
     expect(div).toHaveTextContent(content);
   })
 })

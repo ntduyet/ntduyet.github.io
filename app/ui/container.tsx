@@ -28,7 +28,7 @@ export default async function Container({
         <GroupSection title="Skills">
           <SkillList items={resume.skills} />
         </GroupSection>
-        <GroupSection title="Work Experiences">
+        <GroupSection title="Work Experience">
           <ExperienceList items={resume.experiences} />
         </GroupSection>
         <GroupSection title="Education">

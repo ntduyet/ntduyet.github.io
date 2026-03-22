@@ -1,0 +1,31 @@
+---
+description: Vitest and Testing Library patterns for this repo’s tests
+globs: tests/**/*.{ts,tsx}
+alwaysApply: false
+---
+
+# Vitest and Testing Library
+
+## Discovery
+
+- Tests live under `tests/` and must match `**/*.test.{js,ts,jsx,tsx}` per `vitest.config.ts` (jsdom, `globals: true`, setup in `vitest.setup.js`).
+
+## Helpers (reuse)
+
+- **`makeSut`** from `@/tests/utils/make-component` — render the component under test with typed props: `makeSut(Component, { ...props })`.
+- **`mockComponent`** from `@/tests/utils/mock-component` — dynamic mocks for child components when asserting props or isolating units.
+
+## Structure
+
+- Import `@testing-library/jest-dom` at the top of tests that use matchers.
+- Use `describe` / `it` (or `test`) from `vitest`; use `expect`, `vi` from `vitest` as needed.
+- Call `cleanup` from `@testing-library/react` in `afterEach` when tests render DOM (matches existing suites).
+- Clear mocks in `beforeEach` when using `vi` spies (`vi.clearAllMocks()`).
+
+## Quality
+
+- Prefer one clear behavior per test; keep tests fast and avoid unnecessary async unless the UI requires it.
+
+## Note
+
+- The `tests/` directory is excluded from ESLint in `eslint.config.mjs`; still follow TypeScript and project patterns for consistency.

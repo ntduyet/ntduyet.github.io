@@ -5,7 +5,8 @@
     "start": "npx serve@latest ./build",
     "test": "vitest",
     "coverage": "vitest run --coverage",
-    "lint": "npx eslint ."
+    "lint": "npx eslint .",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@types/js-yaml": "4.0.9",
@@ -22,9 +23,11 @@
     "@vitest/coverage-v8": "^4.0.15",
     "autoprefixer": "^10.4.22",
     "eslint": "^9.39.1",
+    "eslint-config-prettier": "^10.1.8",
     "jsdom": "^26.1.0",
     "next": "^16.0.10",
     "postcss": "^8.5.6",
+    "prettier": "^3.8.1",
     "react": "latest",
     "react-dom": "latest",
     "tailwindcss": "^3.4.18",
