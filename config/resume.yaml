@@ -1,6 +1,6 @@
 person:
   name: Duyet Nguyen
-  title: iOS Software Engineer
+  title: Senior iOS Engineer
 metadatas:
   - id: email
     value: duyetnt.se.uit@gmail.com
@@ -9,7 +9,7 @@ metadatas:
     value: '+84773350530'
     link: tel:+84773350530
   - id: location
-    value: Singapore
+    value: Ho Chi Minh City, Vietnam
   - id: linkedin
     value: linkedin.com/in/duyetnt
     link: https://linkedin.com/in/duyetnt
@@ -20,32 +20,52 @@ education:
   duration: 2011 - 2016
   location: Ho Chi Minh City, Vietnam
 skills:
-  - iOS Development
   - Swift
   - Objective-C
-  - App Architecture
+  - UIKit
+  - SwiftUI
   - Swift Concurrency
   - Combine
   - RxSwift
+  - Clean Architecture
+  - Modular Architecture
+  - MVVM/MVP
+  - UDF
   - XCTest
+  - SwiftTesting
   - Quick/Nimble
   - Git
-  - Problem Solving
-  - Teamwork
-  - Communication
+  - SPM
+  - CI/CD
+  - Fastlane
+  - Performance Optimization
+  - Experimentation
+  - Technical Leadership
+  - Cross-functional Collaboration
   - Mentoring
   - High sense of responsibility
 experiences:
+  - company:
+      name: E-commerce Client (Confidential)
+      website: https://ntduyet.github.io
+    position: Lead iOS Engineer, Consultant
+    duration: 01/2026 - Present
+    tasks:
+      - Led migration of a legacy SwiftUI authentication system (v1 → modular v2), maintaining 99.9% login success rate throughout the rollout.
+      - Architected a modular authentication framework improving separation of concerns, increasing test coverage from ~65% to 95%, and enabling seamless reuse across multiple app targets.
+      - Designed and implemented a reusable network client layer with middleware-based interceptor architecture supporting centralized logging, token refresh, and dynamic header injection.
+      - Introduced Xcode test iteration support within CI workflows, accelerating feedback loops and improving stability when isolating flaky tests.
+      - Integrated Bitrise native test reporting to eliminate manual JUnit inspection, streamlining failure triage and reducing investigation turnaround time.
   - company: 
       name: OKX
       website: https://www.linkedin.com/company/okxofficial/about/
     position: Senior Software Engineer, iOS
     location: Singapore
-    duration: 05/2024 - Present
+    duration: 05/2024 - 09/2025
     tasks:
-      - Pioneered significant codebase modernisation and standardisation by spearheading the adoption of a simplified MVVM architecture variant and implementing comprehensive coding conventions, vastly enhanced readability, maintainability, and scalability across three key repositories.
-      - Led revolutionary refactoring initiatives that transformed component design, reducing development time and boosting first page load time by over 200%.
-      - Elevated team-wide engineering standards by introducing new architectural paradigms, significantly enhancing overall system stability, reducing critical crashes, and boosting unit test coverage.
+      - Spearheaded architecture modernization across 3 core repositories, introducing a standardized MVVM variant and coding conventions adopted by 8 engineers, reducing architectural inconsistencies and accelerating feature delivery.
+      - Led performance optimization efforts, reducing first page load time by ~68% (2100ms → 680ms), significantly improving app responsiveness.
+      - Elevated team-wide engineering standards by enforcing modular boundaries, enhancing overall system stability, reducing critical crashes, and boosting unit test coverage.
       - Drove substantial gains in development eﬃciency by integrating AI-assisted coding, allowing the team to shift focus to critical problem-solving and innovation over repetitive tasks.
       - Mentored and guided junior engineers through complex refactoring projects, consistent code reviews, and technical consultations, ensuring successful high-quality project delivery and adherence to best practices.
   - company:
@@ -55,9 +75,9 @@ experiences:
     duration: 12/2022 - 05/2024
     location: Singapore
     tasks:
-      - Implemented 6 features on time or ahead of time with good engineering practices (reusability, maintainability, unit/snapshot tests, Swift adoption, etc).
+      - Delivered 6 large-scale messaging features used by millions of daily active users, ensuring high performance and maintainability through modular design and comprehensive unit/snapshot testing.
       - Took initiative to work on engineering improvement/refactoring projects, reducing code complexity/duplication and improving feature delivery eﬃciency significantly.
-      - Owner of some important modules providing technical consultation/mentorship to help others design better code via tech solution/code review.
+      - Acted as module owner for Message List, reviewing designs and influencing architectural decisions across the messaging team.
   - company:
       name: Bloomberg LP
       website: https://www.linkedin.com/company/bloomberg/about
@@ -86,8 +106,8 @@ experiences:
     duration: 09/2018 - 11/2020
     location: Singapore
     tasks:
-      - Delivered 12 features and 6 engineering improvement projects for Driver team. Most of the features were massive, complex and required a lot of communication, but I still managed to deliver way ahead of time with fully unit/UI tests covered.
-      - Demonstrated good adaptability by learning a new code-base of Grab iOS app (end-user) in just a few days and delivered some important features without any issues.
+      - Delivered 12 large-scale driver-facing features and 6 engineering improvement initiatives, coordinating across cross-functional stakeholders to ensure timely delivery with full unit/UI test coverage.
+      - Rapidly ramped up on the Grab iOS end-user codebase and delivered critical features within days of onboarding.
       - Led the unit test modularisation project, which improved build time and dependency graph significantly.
       - Increased end to end test coverage from 0% to ~31% in 3 months.
       - Improved CI stability by investigating and fixing a lot of unstable/flaky tests which required good debugging skill and being patient.
