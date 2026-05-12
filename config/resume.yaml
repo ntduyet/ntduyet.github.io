@@ -1,6 +1,6 @@
 person:
   name: Duyet Nguyen
-  title: Senior iOS Engineer
+  title: iOS Software Engineer
 metadatas:
   - id: email
     value: duyetnt.se.uit@gmail.com
@@ -43,7 +43,7 @@ skills:
   - Technical Leadership
   - Cross-functional Collaboration
   - Mentoring
-  - High sense of responsibility
+  - Strong sense of responsibility
 experiences:
   - company:
       name: Confidential E-commerce Client
@@ -51,12 +51,12 @@ experiences:
     position: Lead iOS Engineer, Consultant
     duration: Jan 2026 - Present
     tasks:
-      - Led migration of a legacy SwiftUI authentication system (v1 to modular v2), maintaining 99.9% login success rate throughout the rollout.
+      - Led the investigation and resolution of a critical 1.2GB+ memory regression, preventing OOM crashes by profiling with Instruments and eliminating complex ReactiveSwift subscription leaks.
+      - Optimized the application's image infrastructure to reduce decode pressure, implementing Kingfisher downsampling, Cloudinary edge-thumbnailing, and strict concurrency limits to permanently lower the app's memory baseline.
+      - Led the migration of a legacy SwiftUI authentication system (v1 to modular v2), maintaining a 99.9% login success rate throughout the rollout.
       - Architected a modular authentication framework improving separation of concerns, increasing test coverage from ~65% to 95%, and enabling seamless reuse across multiple app targets.
       - Designed and implemented a reusable network client layer with middleware-based interceptor architecture supporting centralized logging, token refresh, and dynamic header injection.
-      - Introduced Xcode test iteration support within CI workflows, accelerating feedback loops and improving stability when isolating flaky tests.
-      - Integrated Bitrise native test reporting to eliminate manual JUnit inspection, streamlining failure triage and reducing investigation turnaround time.
-  - company: 
+  - company:
       name: OKX
       website: https://www.linkedin.com/company/okxofficial/about/
     position: Senior Software Engineer, iOS
@@ -66,8 +66,8 @@ experiences:
       - Spearheaded architecture modernization across 3 core repositories, introducing a standardized MVVM variant and coding conventions adopted by 8 engineers, reducing architectural inconsistencies and accelerating feature delivery.
       - Led performance optimization efforts, reducing first page load time by ~68% (2100ms to 680ms), significantly improving app responsiveness.
       - Elevated team-wide engineering standards by enforcing modular boundaries, enhancing overall system stability, reducing critical crashes, and boosting unit test coverage.
-      - Drove substantial gains in development eﬃciency by integrating AI-assisted coding, allowing the team to shift focus to critical problem-solving and innovation over repetitive tasks.
-      - Mentored and guided junior engineers through complex refactoring projects, consistent code reviews, and technical consultations, ensuring successful high-quality project delivery and adherence to best practices.
+      - Drove substantial gains in development efficiency by integrating AI-assisted coding, allowing the team to shift focus to critical problem-solving and innovation over repetitive tasks.
+      - Mentored junior engineers through complex refactoring projects, consistent code reviews, and technical consultations, ensuring high-quality delivery and adherence to best practices.
   - company:
       name: TikTok
       website: https://www.linkedin.com/company/tiktok/about
@@ -76,7 +76,7 @@ experiences:
     location: Singapore
     tasks:
       - Delivered 6 large-scale messaging features used by millions of daily active users, ensuring high performance and maintainability through modular design and comprehensive unit/snapshot testing.
-      - Took initiative to work on engineering improvement/refactoring projects, reducing code complexity/duplication and improving feature delivery eﬃciency significantly.
+      - Took the initiative on engineering improvement and refactoring projects, reducing code complexity and duplication and significantly improving feature delivery efficiency.
       - Acted as module owner for Message List, reviewing designs and influencing architectural decisions across the messaging team.
   - company:
       name: Bloomberg LP
@@ -85,9 +85,9 @@ experiences:
     duration: Feb 2022 - Nov 2022
     location: London, United Kingdom
     tasks:
-      - Refactored oﬄine login flow and rolled out to 100% of users successfully.
-      - Proposed and led the parallel UI testing initiative which cut the CI pipelines time by 30-40%.
-      - Led Xcode14/iOS 16 preparation work to ensure the project compatibility and successful release upon iOS 16 oﬃcial rollout.
+      - Refactored the offline login flow and successfully rolled it out to 100% of users.
+      - Proposed and led the parallel UI testing initiative, which cut CI pipeline time by 30–40%.
+      - Led Xcode 14/iOS 16 preparation work to ensure project compatibility and a successful release when iOS 16 officially rolled out.
   - company:
       name: Delivery Hero SE
       website: https://www.linkedin.com/company/delivery-hero-se/about
@@ -95,10 +95,9 @@ experiences:
     duration: Mar 2021 - Jan 2022
     location: Berlin, Germany
     tasks:
-      - Delivered the native customer feedback collection feature to replace the old web view-based experience ahead of timeline.
-      - Built the team's codebase from scratch with a standardised architecture (VIPER) which resulted in high maintainability and testability with ~98% unit test coverage.
-      - Achieved 93% UI test coverage (the rest is untestable).
-      - Was the first team implementing snapshot testing for every UI component.
+      - Delivered the native customer feedback collection feature to replace the old web view-based experience ahead of schedule.
+      - Built the team's codebase from scratch with a standardised architecture (VIPER) which resulted in high maintainability and testability with ~98% unit test and ~93% UI test coverage.
+      - Was the first team to implement snapshot testing for every UI component.
   - company:
       name: Grab
       website: https://www.linkedin.com/company/grabapp/about
@@ -106,18 +105,18 @@ experiences:
     duration: Sep 2018 - Nov 2020
     location: Singapore
     tasks:
-      - Delivered 12 large-scale driver-facing features and 6 engineering improvement initiatives, coordinating across cross-functional stakeholders to ensure timely delivery with full unit/UI test coverage.
+      - Delivered 12 large-scale driver-facing features and 6 engineering improvement initiatives, coordinating with cross-functional stakeholders to ensure timely delivery with full unit/UI test coverage.
       - Rapidly ramped up on the Grab iOS end-user codebase and delivered critical features within days of onboarding.
-      - Led the unit test modularisation project, which improved build time and dependency graph significantly.
-      - Increased end to end test coverage from 0% to ~31% in 3 months.
-      - Improved CI stability by investigating and fixing a lot of unstable/flaky tests which required good debugging skill and being patient.
-  - company: 
+      - Led the unit test modularisation project, which significantly improved build times and the dependency graph.
+      - Increased end-to-end test coverage from 0% to ~31% in 3 months.
+      - Improved CI stability by investigating and fixing many unstable and flaky tests.
+  - company:
       name: Misfit Wearables & Fossil Group, Inc
       website: https://www.linkedin.com/company/fossil/about
     position: Software Engineer, iOS
     duration: Sep 2015 - Aug 2018
     location: Ho Chi Minh City, Vietnam
     tasks:
-      - Took over iOS apps development (from Fossil's former team) to interact with company's products using Bluetooth Low Energy technology (Hybrid Smartwatch) for many brands (Fossil Q, Michael Kors, Emporio Armani, Kate Spade New York...). The apps support more than 20 languages (being pulled once there is an update from the server-side).
-      - Increased the scalability and reusability by separating the codebase into independent pods, sharing among 10 apps for 10 diﬀerent brands.
-      - Adopted the new architecture (MVVM or later is VIPER) to make the code cleaner, more manageable and testable. VIPER is fully used in the Fossil Q app, while MVVM is fully used in the other branded apps.
+      - Took over iOS app development (from Fossil's former team) to integrate with the company's products over Bluetooth Low Energy (Hybrid Smartwatch) for many brands (Fossil Q, Michael Kors, Emporio Armani, Kate Spade New York, and others). The apps support more than 20 languages, with translations pulled from the server whenever updates are available.
+      - Increased scalability and reusability by separating the codebase into independent pods shared across 10 apps for 10 different brands.
+      - Adopted MVVM first, then VIPER, to make the code cleaner, more manageable, and testable. VIPER was used end-to-end in the Fossil Q app, while MVVM was used in the other branded apps.
