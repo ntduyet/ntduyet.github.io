@@ -51,9 +51,7 @@ experiences:
     position: Lead iOS Engineer, Consultant
     duration: Jan 2026 - Present
     tasks:
-      - Led the investigation and resolution of a critical 1.2GB+ memory regression, preventing OOM crashes by profiling with Instruments and eliminating complex ReactiveSwift subscription leaks.
-      - Optimized the application's image infrastructure to reduce decode pressure, implementing Kingfisher downsampling, Cloudinary edge-thumbnailing, and strict concurrency limits to permanently lower the app's memory baseline.
-      - Eliminated severe scroll jank in a media- and map-rich screen, recovering full 60fps responsiveness and a smooth user experience by methodically profiling and resolving Core Animation hitches.
+      - Led an app-wide performance cohort and resolved a critical 1.2GB+ memory regression — reducing hang rate by 86%, memory footprint by 40%, and battery usage by 12% — by profiling with Instruments, offloading synchronous jailbreak detection from main-thread network interceptors, implementing image downsampling, and optimizing Google Maps rendering.
       - Led the migration of a legacy SwiftUI authentication system (v1 to modular v2), maintaining a 99.9% login success rate throughout the rollout.
       - Architected a modular authentication framework improving separation of concerns, increasing test coverage from ~65% to 95%, and enabling seamless reuse across multiple app targets.
       - Designed and implemented a reusable network client layer with middleware-based interceptor architecture supporting centralized logging, token refresh, and dynamic header injection.
